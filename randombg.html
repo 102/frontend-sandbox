@@ -2,10 +2,13 @@
 <html>
 	<head>
 		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>		
 		<script>
 			$(function(){
 			  $("a").click(function(){
-				  $("body").css("background-color","#" + Math.random().toString(16).slice(2, 8));
+				clr = "#" + Math.random().toString(16).slice(2, 8);
+				$("body").animate({backgroundColor: clr}, 300);
+				$("span").text(clr)
 			  });
 			});
 		</script>
@@ -16,13 +19,17 @@
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
-				border: 4px double black;
+				border: 2px solid black;
 				padding: 3px;
 				text-decoration: none;
 				border-radius: 8px;
+				font-family: Helvetica, Sans-Serif;	
 			}
 			a:hover {
 				background-color: #ee5555;
+			}
+			a:active {
+				background-color: #cc3333;
 			}
 			a:link, a:visited, a:hover, a:active {
 				color: black;
@@ -30,6 +37,6 @@
 		</style>
 	</head>
 	<body>
-		<a href="#">randomize background color</a>
+		<a href="#"><span>#ffffff</span></a>
 	</body>
 </html>
