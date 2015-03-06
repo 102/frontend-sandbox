@@ -5,38 +5,30 @@
 		<script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>		
 		<script>
 			$(function(){
-			  $("a").click(function(){
+			  $( "*" ).click(function(){
 				clr = "#" + Math.random().toString(16).slice(2, 8);
-				$("body").animate({backgroundColor: clr}, 300);
-				$("span").text(clr)
+				$( "body" ).animate({backgroundColor: clr}, 400, function(){
+					$( "span" ).text(clr);
+				});
 			  });
 			});
 		</script>
 		<style>
-			a {
-				background-color: #ff6666;
+			span {
 				position: absolute;
 				top: 50%;
 				left: 50%;
-				transform: translate(-50%, -50%);
-				border: 2px solid black;
-				padding: 3px;
-				text-decoration: none;
-				border-radius: 8px;
-				font-family: Helvetica, Sans-Serif;	
-			}
-			a:hover {
-				background-color: #ee5555;
-			}
-			a:active {
-				background-color: #cc3333;
-			}
-			a:link, a:visited, a:hover, a:active {
 				color: black;
+				transform: translate(-50%, -50%);
+				font-family: Helvetica, Sans-Serif;	   
+				-moz-user-select: none; 
+				-khtml-user-select: none; 
+				-webkit-user-select: none; 
+				-o-user-select: none;
 			}
 		</style>
 	</head>
 	<body>
-		<a href="#"><span>#ffffff</span></a>
+		<span>click anywhere to randomize background color</span>
 	</body>
 </html>
