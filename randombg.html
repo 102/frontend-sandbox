@@ -5,12 +5,13 @@
 		<script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>		
 		<script>
 			$(function(){
-			  $( "*" ).click(function(){
-				clr = "#" + Math.random().toString(16).slice(2, 8);
-				$( "body" ).animate({backgroundColor: clr}, 400, function(){
-					$( "span" ).text(clr);
+				$( "div" ).click(function(){
+					clr = "#" + Math.random().toString(16).slice(2, 8);
+					$( "div" ).animate({backgroundColor: clr}, 300);
+					$( "span" ).fadeOut(300, function(){
+							$( this ).text(clr).fadeIn(300);
+					});
 				});
-			  });
 			});
 		</script>
 		<style>
@@ -26,9 +27,20 @@
 				-webkit-user-select: none; 
 				-o-user-select: none;
 			}
+			div {
+				margin: 0;
+				padding: 0;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				height: 100vh;
+				width: 100vw;
+			}
 		</style>
 	</head>
 	<body>
-		<span>click anywhere to randomize background color</span>
+		<div>
+			<span>click anywhere to randomize background color</span>
+		</div>
 	</body>
 </html>
