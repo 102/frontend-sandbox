@@ -1,5 +1,7 @@
+
+	
 $(function(){
-	$( "#getphoto" ).click(function(){
+		function randomhandler() {
 		function get_random() {
 			$.ajax({
 				url: "https://api.instagram.com/v1/media/popular?client_id=68ed5b515dc84031b707c351fa227eaf",
@@ -23,7 +25,7 @@ $(function(){
 							url: getrecent_url,
 							dataType: "jsonp",
 							success: function( response ) {
-								console.log(image_url = response.data[Math.round(Math.random()*100)%20].images.standard_resolution.url); // server response
+								console.log(image_url = response.data[Math.round(Math.random()*100)%response.data.length].images.standard_resolution.url); // server response
 								$('#img').css('background-image', 'url(' + image_url + ')');
 							}
 						});
@@ -36,5 +38,12 @@ $(function(){
 		else {
 			get_random();
 		};
+	};
+	$( "#getphoto" ).click(randomhandler);
+	$('#username').keypress(function (e) {
+		if (e.which == 13) {
+			randomhandler();
+			return false;
+		}
 	});
 })
