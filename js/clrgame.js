@@ -1,11 +1,17 @@
 function getColors(difficulty) {
-	init = [Math.round(Math.random()*255),Math.round(Math.random()*255),Math.round(Math.random()*255)];
+	init = [0,0,0];
+	rate = 30 * difficulty + 15;
+	for (i = 0; i < init.length; ++i) {
+		init[i] = 3 * rate + (Math.round(Math.random() * (255 - 3 * rate)));
+	}
+	console.log(init);
 	colors = [];
 	color = '#';
 	for (i = 0; i < 3; ++i) {
 		for (j = 0; j < 3; ++j) {
-			x = init[j] - (i * (15 + 50*difficulty));
-			color += (x > 0 ? x : 255 - x).toString(16);
+			
+			x = init[j] - i*rate;
+			color += ((x = x.toString(16)).length == 2 ? x : '0' + x);
 		}
 		colors[i] = color;
 		color = '#';
