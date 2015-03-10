@@ -15,7 +15,7 @@ function execute(string, input) {
 	
 	output = '';
 	j = 0;
-	while (j < string.length && arr[i] < 128) {
+	while (j < string.length) {
 		switch (string.charAt(j)) {
 			case '>': state(j); i++; break;
 			case '<': state(j); i--; break;
