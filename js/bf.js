@@ -19,8 +19,8 @@ function execute(string, input) {
 		switch (string.charAt(j)) {
 			case '>': state(j); i++; break;
 			case '<': state(j); i--; break;
-			case '+': state(j); arr[i]++; break;
-			case '-': state(j); arr[i]--; break;
+			case '+': state(j); arr[i] = (arr[i]+1)%256; break;
+			case '-': state(j); arr[i] = (arr[i]-1)%256 break;
 			case '.': state(j); output += String.fromCharCode(arr[i]); break;
 			case ',': state(j); arr[i] = input.charCodeAt(q++); break;
 			case '[': {
