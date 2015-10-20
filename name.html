@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<button id="generate">Generate</button> <span id="name"></span>
+<script>
+  var words = [
+    'voice',
+    'sound',
+    'loud',
+    'scream',
+    'box',
+    'app',
+    'gram',
+    'phone',
+    'growl',
+    'roar',
+    'music',
+    'awesome',
+    'super'
+  ];
+  $('#generate').click(function () {
+    $('#name').text(words[Math.round(Math.random()*words.length)] + words[Math.round(Math.random()*words.length)]);
+  });
+  $(document).ready(function () {
+    $('#generate').trigger('click');
+  });
+</script>
