@@ -36,7 +36,7 @@ $(function() {
       });
     else {
       get_random();
-    };
+    }
   };
   $("#getphoto").click(randomhandler);
   $('#username').keypress(function(e) {
