@@ -5,7 +5,7 @@ $(function() {
         url: "https://api.instagram.com/v1/media/popular?client_id=68ed5b515dc84031b707c351fa227eaf",
         dataType: "jsonp",
         success: function(response) {
-          console.log(image_url = response.data[Math.round(Math.random() * 100) % 20].images.standard_resolution.url); // server response
+          image_url = response.data[Math.round(Math.random() * 100) % 20].images.standard_resolution.url; // server response
           $('#img').css('background-image', 'url(' + image_url + ')');
         }
       });
