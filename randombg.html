@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-		<script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>		
-		<script>
-			$(function(){
-				$( "div" ).click(function(){
-					clr = "#" + Math.random().toString(16).slice(2, 8);
-					$( "div" ).animate({backgroundColor: clr}, 300);
-					$( "span" ).fadeOut(300, function(){
-							$( this ).text(clr).fadeIn(300);
-					});
-				});
-			});
-		</script>
-		<style>
-			span {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				color: black;
-				transform: translate(-50%, -50%);
-				font-family: Helvetica, Sans-Serif;	   
-				-moz-user-select: none; 
-				-khtml-user-select: none; 
-				-webkit-user-select: none; 
-				-o-user-select: none;
-			}
-			div {
-				margin: 0;
-				padding: 0;
-				position: absolute;
-				left: 0px;
-				top: 0px;
-				height: 100vh;
-				width: 100vw;
-				cursor: pointer;
-			}
-		</style>
-	</head>
-	<body>
-		<div>
-			<span>click anywhere to randomize background color</span>
-		</div>
-	</body>
+  <head>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+    <script>
+      $(function(){
+        $( "div" ).click(function(){
+          clr = "#" + Math.random().toString(16).slice(2, 8);
+          $( "div" ).animate({backgroundColor: clr}, 300);
+          $( "span" ).fadeOut(300, function(){
+              $( this ).text(clr).fadeIn(300);
+          });
+        });
+      });
+    </script>
+    <style>
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: black;
+        transform: translate(-50%, -50%);
+        font-family: Helvetica, Sans-Serif;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+      }
+      div {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100vh;
+        width: 100vw;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span>click anywhere to randomize background color</span>
+    </div>
+  </body>
 </html>
